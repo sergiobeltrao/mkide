@@ -1,4 +1,4 @@
-package mkide.com.mkide;
+package com.mkide;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

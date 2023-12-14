@@ -4,6 +4,6 @@ module mkide.com.mkide {
 
     requires com.dlsc.formsfx;
 
-    opens mkide.com.mkide to javafx.fxml;
-    exports mkide.com.mkide;
+    opens com.mkide to javafx.fxml;
+    exports com.mkide;
 }
