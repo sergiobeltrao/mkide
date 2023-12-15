@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -11,7 +12,11 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem fx:id="mopClose" mnemonicParsing="false" onAction="#closeHomeWindow" text="Close" />
+                  <MenuItem mnemonicParsing="false" text="New File" />
+                  <MenuItem fx:id="mopOpen" mnemonicParsing="false" text="Open" />
+                  <MenuItem fx:id="mopSave" mnemonicParsing="false" text="Save" />
+                  <MenuItem mnemonicParsing="false" text="Save As" />
+              <MenuItem fx:id="mopQuit" mnemonicParsing="false" onAction="#closeHomeWindow" text="Quit" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
@@ -19,8 +24,20 @@
               <MenuItem fx:id="mopConnection" mnemonicParsing="false" onAction="#openConnectionConfiguration" text="Connection" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Window">
+              <items>
+                  <CheckMenuItem fx:id="mopShowTerminal" mnemonicParsing="false" text="Show Terminal" />
+                  <Menu mnemonicParsing="false" text="Theme">
+                     <items>
+                        <CheckMenuItem fx:id="mopThemeLight" mnemonicParsing="false" text="Light" />
+                        <CheckMenuItem fx:id="mopThemeDark" mnemonicParsing="false" text="Dark" />
+                     </items>
+                  </Menu>
+              </items>
+            </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
+                  <MenuItem fx:id="mopUpadateCkecker" mnemonicParsing="false" text="Update Checker" />
               <MenuItem fx:id="mopAbout" mnemonicParsing="false" onAction="#aboutThisProgram" text="About" />
             </items>
           </Menu>
