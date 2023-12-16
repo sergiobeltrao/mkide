@@ -1,7 +1,9 @@
-package com.mkide;
+package com.mkide.controller;
 
 import com.jcraft.jsch.JSchException;
+import com.mkide.Sftp;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -20,10 +22,9 @@ public class ConnectionController {
     public void bntConnectActionPerformed() throws JSchException {
 
         if (errorCheck() != null) {
-            System.out.println(errorCheck());
+            showAlert(Alert.AlertType.WARNING, "Error", errorCheck());
         } else {
             Sftp sftp = new Sftp();
-
             sftp.setUsername(txbUsername.getText());
             sftp.setPassword(txbPassword.getText());
             sftp.setHost(txbDeviceIpAddress.getText());
@@ -58,5 +59,13 @@ public class ConnectionController {
         }
 
         return errorMessage;
+    }
+
+    private void showAlert(Alert.AlertType type, String title, String content) {
+        Alert alert = new Alert(type);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(content);
+        alert.showAndWait();
     }
 }

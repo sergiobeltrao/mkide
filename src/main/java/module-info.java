@@ -7,4 +7,6 @@ module mkide.com.mkide {
 
     opens com.mkide to javafx.fxml;
     exports com.mkide;
+    exports com.mkide.controller;
+    opens com.mkide.controller to javafx.fxml;
 }
